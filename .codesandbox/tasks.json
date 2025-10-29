@@ -1,0 +1,17 @@
+{
+  "setupTasks": [
+    {
+      "name": "Install Python deps",
+      "command": "pip install -r app/requirements.txt"
+    }
+  ],
+  "tasks": {
+    "start": {
+      "name": "Start Flask",
+      "command": "python app/app.py",
+      "preview": { "port": 8080 },
+      "runAtStart": true,
+      "restartOn": { "files": ["app/**/*.py", "app/requirements.txt"] }
+    }
+  }
+}
